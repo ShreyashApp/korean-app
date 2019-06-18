@@ -1,0 +1,13 @@
+<mat-sidenav-container class="example-container" style="margin-top:50px;" >
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="push('open!')" (closed)="push('close!')">
+   <p>Sidenav content</p>
+   <p>Second Value</p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p>
+      <button mat-button (click)="sidenav.toggle()" *ngIf="!opened"><i class="fas fa-angle-right"></i></button>
+      <button mat-button (click)="sidenav.toggle()" *ngIf="opened"><i class="fas fa-angle-left"></i></button>
+    </p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

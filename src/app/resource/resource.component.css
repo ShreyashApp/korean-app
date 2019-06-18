@@ -1,0 +1,109 @@
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#CCC;
+	font-size:12px;
+}
+
+
+.label-container{
+	position:fixed;
+	bottom:48px;
+	right:105px;
+	display:table;
+	visibility: hidden;
+}
+
+.table-fixed thead th {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	background-color: honeydew;
+}
+
+
+
+
+
+.label-text{
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	border-radius:3px;
+}
+
+.label-arrow{
+	display:table-cell;
+	vertical-align:middle;
+	color:#333;
+	opacity:0.5;
+}
+
+.float{
+	float: right;
+	margin-right:10px;
+	background-color:#F33;
+	color:#FFF;
+	text-align:center;
+}
+
+ul{
+	margin-top: 20px;
+	position:fixed;
+	float: right;
+	right:30px;
+	padding-bottom:20px;
+}
+
+button{
+	background-color:#F33;
+	color:#FFF;
+	text-align:center;
+	display:block;
+}
+ 
+ul:hover{
+	visibility:visible!important;
+	opacity:1!important;
+}
+
+
+
+
+.my-float{
+	font-size:24px;
+	margin-top:18px;
+}
+
+ button#menu-share + ul{
+  visibility: hidden;
+} 
+
+ button#menu-share:hover + ul{
+	visibility: visible;
+  animation: scale-in 0.5s;
+}
+
+button#menu-share i{
+	animation: rotate-in 0.5s;
+}
+
+button#menu-share:hover > i{
+	animation: rotate-out 0.5s;
+}
+
+
+@keyframes scale-in {
+    from {transform: scale(0);opacity: 0;}
+    to {transform: scale(1);opacity: 1;}
+}
+
+@keyframes rotate-in {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}

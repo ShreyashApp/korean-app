@@ -1,0 +1,17 @@
+ 
+  <div >
+    <form style="text-align:center;margin-top: 100px" [formGroup] ="loginForm" >
+      <h1>Login</h1>
+      <div >
+        <label style="margin-right: 145px" >Username</label><br>
+        <input   type="text" formControlName="emailFormControl">
+      </div>
+      <div>
+        <label style="margin-right: 145px">Password</label><br>
+        <input type="password" formControlName="passwordControl">
+      </div>
+      <input type="submit" class="btn btn-primary" (click)="Login()" style="width: 205px;margin-top: 10px"><br>
+      <input type="checkbox"> Remember Name<br>
+      <button class="btn  btn-primary">Sign Up</button><a href="" style="margin-left:10px">Forgot Password</a>
+    </form>
+  </div>

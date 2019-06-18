@@ -1,0 +1,38 @@
+<!-- <select #add id="add" style="background-image:url(favicon.ico);background-repeat: no-repeat;width: fit-content" (click)="adding(add.value)">
+  <option value="" disabled></option>
+  <option value="0">Add Row</option>
+  <option value="1">Add Column</option>
+</select> -->
+<div class="container" >
+  <div style="background-color: gray;padding: 3px;">
+<div class="dropdown show ">
+  <button class="float" id="menu-share"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <i class="fas fa-plus"></i>
+</button>
+<div class="dropdown-menu">
+  <button class="dropdown-item" (click)="addRow()">Add Row</button>
+  <button class="dropdown-item" (click)="addColumn()">Add Column</button>
+  <input type="file" accept=".csv" (change)="csv2Array($event)">
+</div>
+</div>
+<!-- <button (click)="addColumn()">Add Column</button> -->
+<input type="text" [(ngModel)]="filter" placeholder="Search">
+</div>
+<div style="height:500px;overflow-y: scroll;">
+<table border="2px"  class="table table-fixed " style="width:100%;overflow-x:scroll;">
+  <thead>
+      <th *ngFor="let val of headvals" >{{val}}</th>
+      <th *ngIf="boolinpcol"><input type="text" id="newCol" name="newCol"><button (click)="submitCol()" autofocus>Add</button><button (click)="cancel()">Close</button></th>
+  </thead>
+  <tbody >
+    <tr *ngFor="let vas of task|slice:1 |filter :filter;let i=index">
+      <td *ngFor="let vasu of headvals;let j=index">{{vas[j]}}</td>
+    </tr>
+    <tr *ngIf="boolinprow">
+        <td *ngFor="let vasu of headvals;let j=index"><input type="text" name={{j}}  id={{j}} autofocus></td>
+        <td><button (click)="submitRow()">Add</button><button (click)="cancel()">Close</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
